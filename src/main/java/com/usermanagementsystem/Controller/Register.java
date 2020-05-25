@@ -3,23 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package usermanagementsystem.Controller;
+package com.usermanagementsystem.Controller;
 
+import com.usermanagementsystem.DOA.MyDb;
+import com.usermanagementsystem.bean.RegisterUser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import usermanagementsystem.DOA.MyDb;
-import usermanagementsystem.bean.RegisterUser;
 
 /**
  *
  * @author tsomo
  */
-@WebServlet(name = "Register", urlPatterns = {"/Register"})
 public class Register extends HttpServlet {
 
     /**
@@ -87,7 +85,6 @@ public class Register extends HttpServlet {
             MyDb mydb=new MyDb();
             String result=mydb.insert(user);
             response.getWriter().print(result);
-            
     }
 
     /**
