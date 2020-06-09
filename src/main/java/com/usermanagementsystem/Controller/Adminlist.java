@@ -1,13 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.usermanagementsystem.Controller;
 
 import com.usermanagementsystem.DOA.MyDb;
 import com.usermanagementsystem.bean.RegisterUser;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author tsomo
+ * @author aashi
  */
-public class Register extends HttpServlet {
+public class Adminlist extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class Register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet Adminlist</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Adminlist at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,11 +58,14 @@ public class Register extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       // processRequest(request, response);
-            doGet(request, response);
-       
+        //processRequest(request, response);
+            List<RegisterUser> listRegisterUser = MyDb.listAllUsers();
+            request.setAttribute("listRegisterUser", listRegisterUser);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("CRUD.jsp");
+            dispatcher.forward(request, response);
+    
     }
 
     /**
@@ -72,29 +77,18 @@ public class Register extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
         //processRequest(request, response);
-        //to retrived details
-            int id = Integer.parseInt(request.getParameter("id"));
-            String firstname = request.getParameter("ufname");
-            String lastname = request.getParameter("ulname");
-            String address = request.getParameter("uaddress");
-            String phonenum = request.getParameter("upnum");
-            String email = request.getParameter("uemail");
-            String password = request.getParameter("upass");
-            String confirmpassword = request.getParameter("ucpass");
-            RegisterUser user = new RegisterUser(id,firstname,lastname,address,phonenum,email,password,confirmpassword);
-            MyDb mydb=new MyDb();
-            String result=mydb.insert(user);
-            response.getWriter().print(result);
+         
+            List<RegisterUser> listRegisterUser = MyDb.listAllUsers();
+            request.setAttribute("listRegisterUser", listRegisterUser);
             RequestDispatcher dispatcher = request.getRequestDispatcher("CRUD.jsp");
             dispatcher.forward(request, response);
+    
+    
     }
-    
-  
-    
+
     /**
      * Returns a short description of the servlet.
      *
@@ -104,7 +98,5 @@ public class Register extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-     
-    
-    
+
 }

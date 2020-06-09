@@ -11,6 +11,7 @@ package com.usermanagementsystem.bean;
  */
 public class RegisterUser {
     
+    private int id;
     private String firstname;
     private String lastname;
     private String address;
@@ -18,9 +19,6 @@ public class RegisterUser {
     private String email;
     private String password;
     private String confirmpassword;
-
-    public RegisterUser() {
-    }
 
     public RegisterUser(String firstname, String lastname, String address, String phonenum, String email, String password, String confirmpassword) {
         this.firstname = firstname;
@@ -30,6 +28,25 @@ public class RegisterUser {
         this.email = email;
         this.password = password;
         this.confirmpassword = confirmpassword;
+    }
+
+    public RegisterUser( int id , String firstname, String lastname, String address, String phonenum, String email, String password, String confirmpassword) {
+        this.id=id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+        this.phonenum = phonenum;
+        this.email = email;
+        this.password = password;
+        this.confirmpassword = confirmpassword;
+    }
+    
+    public int getid(){
+        return id;
+    }
+    
+    public void setid(int id){
+        this.id=id;
     }
 
     public String getFirstname() {

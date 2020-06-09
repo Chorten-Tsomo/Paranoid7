@@ -8,6 +8,22 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>com.usermanagementsystem.Controller.Register</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Adminlist</servlet-name>
+        <servlet-class>com.usermanagementsystem.Controller.Adminlist</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditUser</servlet-name>
+        <servlet-class>com.usermanagementsystem.Controller.EditUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>com.usermanagementsystem.Controller.DeleteUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateUser</servlet-name>
+        <servlet-class>com.usermanagementsystem.Controller.UpdateUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginCheck</servlet-name>
         <url-pattern>/LoginCheck</url-pattern>
@@ -15,6 +31,22 @@
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Adminlist</servlet-name>
+        <url-pattern>/Adminlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUser</servlet-name>
+        <url-pattern>/EditUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/DeleteUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateUser</servlet-name>
+        <url-pattern>/UpdateUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

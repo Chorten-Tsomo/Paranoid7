@@ -17,7 +17,11 @@
         <p>Please fill in this form to create an account.</p>
         <form action="Register" method="post">
    <table style="with: 80%">
-    <tr>
+     <tr>
+     <td>ID</td>
+     <td><input type="text" name="id" /></td>      
+     </tr>
+     <tr>
      <td>First Name</td>
      <td><input type="text" name="ufname" /></td>
     </tr>
