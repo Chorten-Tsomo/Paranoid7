@@ -70,12 +70,13 @@ public class LoginCheck extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
         String email = request.getParameter("uemail");
         String password = request.getParameter("upass");
         
         if(email.equals("jay@gmail.com")&& password.equals("1234")){
-        
+            
+           
             response.sendRedirect("user.jsp");
             
             }else{
