@@ -10,20 +10,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Form</title>
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">
     </head>
     <body>
-        <form action="LoginCheck" method="post">
-		<table style="with: 50%">
- 
-			<tr>
-				<td>Email</td>
-				<td><input type="email" name="uemail" /></td>
-			</tr>
-				<tr>
-				<td>Password</td>
-				<td><input type="password" name="upass" /></td>
-			</tr>
-		</table>
-            <input type="submit" value="Login" /></form> 
+        <div class="loginbox"> 
+            <img src="user.png" class="avatar">
+            <h1>LOG IN HERE</h1>
+            <form action="LoginCheck" method="post">
+		<p>Email</p>
+                <input type="email" name="uemail" />
+		<p>Password</p>
+                <input type="password" name="upass" />
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="Login" />
+            </form> 
+        </div>
     </body>
 </html>
