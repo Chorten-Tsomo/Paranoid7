@@ -9,8 +9,7 @@ package com.usermanagementsystem.bean;
  *
  * @author tsomo
  */
-public class RegisterUser {
-    
+public class RegisterBean {
     private String firstname;
     private String lastname;
     private String address;
@@ -18,19 +17,6 @@ public class RegisterUser {
     private String email;
     private String password;
     private String confirmpassword;
-
-    public RegisterUser() {
-    }
-
-    public RegisterUser(String firstname, String lastname, String address, String phonenum, String email, String password, String confirmpassword) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.address = address;
-        this.phonenum = phonenum;
-        this.email = email;
-        this.password = password;
-        this.confirmpassword = confirmpassword;
-    }
 
     public String getFirstname() {
         return firstname;
@@ -88,8 +74,5 @@ public class RegisterUser {
         this.confirmpassword = confirmpassword;
     }
     
-    
-
-
     
 }

@@ -5,11 +5,12 @@
  */
 package com.usermanagementsystem.Controller;
 
-import com.usermanagementsystem.DOA.MyDb;
-import com.usermanagementsystem.bean.RegisterUser;
+import com.usermanagementsystem.DAO.RegisterDao;
+import com.usermanagementsystem.bean.RegisterBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author tsomo
  */
-public class Register extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
+public class RegisterServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class Register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet RegisterServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -73,7 +75,7 @@ public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        //to retrived details
+        //Copying all the input parameters in to local variables
             String firstname = request.getParameter("ufname");
             String lastname = request.getParameter("ulname");
             String address = request.getParameter("uaddress");
@@ -81,11 +83,32 @@ public class Register extends HttpServlet {
             String email = request.getParameter("uemail");
             String password = request.getParameter("upass");
             String confirmpassword = request.getParameter("ucpass");
-            RegisterUser user = new RegisterUser(firstname,lastname,address,phonenum,email,password,confirmpassword);
-            MyDb mydb=new MyDb();
-            String result=mydb.insert(user);
-            response.getWriter().print(result);
-    }
+        
+            RegisterBean registerBean = new RegisterBean();
+        //Using Java Beans - An easiest way to play with group of related data
+        registerBean.setFirstname(firstname);
+        registerBean.setLastname(lastname);
+        registerBean.setAddress(address);
+        registerBean.setPhonenum(phonenum);
+        registerBean.setEmail(email);
+        registerBean.setPassword(password);
+        registerBean.setConfirmpassword(confirmpassword);
+        
+        RegisterDao registerDao = new RegisterDao();
+        //The core Logic of the Registration application is present here. We are going to insert user data in to the database.
+         String userRegistered = registerDao.registerUser(registerBean);
+         
+         if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
+         {
+            request.getRequestDispatcher("/Home.jsp").forward(request, response);
+         }
+         else   //On Failure, display a meaningful message to the User.
+         {
+            request.setAttribute("errMessage", userRegistered);
+            request.getRequestDispatcher("/Register.jsp").forward(request, response);
+         }
+     }
+    
 
     /**
      * Returns a short description of the servlet.
