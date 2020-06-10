@@ -18,7 +18,7 @@
             <h1>LOG IN HERE</h1>
             <form action="LoginCheck" method="post">
 		<p>Email</p>
-                <input type="email" name="uemail" />
+                <input type="text" name="uemail" />
 		<p>Password</p>
                 <input type="password" name="upass" />
                 <br>

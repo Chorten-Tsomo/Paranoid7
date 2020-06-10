@@ -69,7 +69,7 @@ public class DeleteUser extends HttpServlet {
             Logger.getLogger(DeleteUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        response.sendRedirect("CRUD.jsp");
+        response.sendRedirect("dashboard/index.html");
         
     }
     

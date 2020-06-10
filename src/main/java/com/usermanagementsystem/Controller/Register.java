@@ -89,8 +89,7 @@ public class Register extends HttpServlet {
             MyDb mydb=new MyDb();
             String result=mydb.insert(user);
             response.getWriter().print(result);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("CRUD.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("dashboard/index.html");
     }
     
   

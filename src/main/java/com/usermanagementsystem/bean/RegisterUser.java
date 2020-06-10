@@ -19,6 +19,9 @@ public class RegisterUser {
     private String email;
     private String password;
     private String confirmpassword;
+    
+    public RegisterUser(){
+    }
 
     public RegisterUser(String firstname, String lastname, String address, String phonenum, String email, String password, String confirmpassword) {
         this.firstname = firstname;
@@ -30,6 +33,8 @@ public class RegisterUser {
         this.confirmpassword = confirmpassword;
     }
 
+  
+    
     public RegisterUser( int id , String firstname, String lastname, String address, String phonenum, String email, String password, String confirmpassword) {
         this.id=id;
         this.firstname = firstname;

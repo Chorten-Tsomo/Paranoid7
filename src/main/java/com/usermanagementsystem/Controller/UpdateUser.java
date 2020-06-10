@@ -90,7 +90,7 @@ public class UpdateUser extends HttpServlet {
             int i=ps.executeUpdate();
             
             if(i>0){
-              response.sendRedirect("CRUD.jsp");
+              response.sendRedirect("dashboard/index.html");
             }
             else{
                 System.out.println("Error");

@@ -41,7 +41,7 @@
             <i class="fas fa-network-wired"></i> Categories</a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="../Adminlist" class="nav-link">
               <i class="fas fa-users"></i> Users</a>
           </li>
         </ul>
@@ -59,7 +59,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="../Login.jsp" class="nav-link">
               <i class="fas fa-sign-out-alt"></i> Logout</a>
           </li>
         </ul>
@@ -74,20 +74,20 @@
      
     <div class="row">
        <div class="col-md-4">
-         <a href="" class="btn btn-primary d-block font-weight-bold">
-          <i class="fas fa-plus"></i> &nbsp;HISTORY LOG</a>
-       </div>
-       <div class="col-md-4">
-         <a href="" class="btn btn-success d-block font-weight-bold">
-          <i class="fas fa-plus"></i> &nbsp; ADD POST</a>
-       </div>
-       <div class="col-md-4">
-         <a href="../Register.jsp" class="btn btn-warning d-block font-weight-bold">
+         <a href="../Register.jsp" class="btn btn-primary d-block font-weight-bold">
           <i class="fas fa-plus"></i> &nbsp;ADD USER</a>
        </div>
+       <div class="col-md-4">
+         <a href="../Adminlist" class="btn btn-success d-block font-weight-bold">
+          <i class="fas fa-plus"></i> &nbsp; List User</a>
+       </div>
+       <div class="col-md-4">
+         <a href="" class="btn btn-warning d-block font-weight-bold">
+          <i class="fas fa-plus"></i> &nbsp;History Log</a>
+       </div>
         <div class="col-md-4">
-         <a href="../Adminlist" class="btn btn-warning d-block font-weight-bold">
-          <i class="fas fa-plus"></i> &nbsp;List USER</a>
+         <a href="" class="btn btn-warning d-block font-weight-bold">
+          <i class="fas fa-plus"></i> &nbsp;Report</a>
        </div>
     </div>
   </div>
@@ -95,123 +95,10 @@
   <!-- dashboaRd contet start -->
   <div class="container-fluid">
     
-    <div class="row"> 
-      <div class="col-8">
-        <h2 style="background-color: purple;" class="text-white p-2 ">Latest Posts</h2>
-        <div class="container">
-        <!-- creating table -->
-        <table class="table mt-3">
-          <thead class="table-dark">
-            <tr>
-              <th>#</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Date Posted</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Post One</td>
-              <td>Administrator</td>
-              <td>2020-05-20</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Post two</td>
-              <td>Guest</td>
-              <td>2020-05-21</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Post three</td>
-              <td>Client</td>
-              <td>2020-05-22</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Post four</td>
-              <td>Guest</td>
-              <td>2020-05-23</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Post Five</td>
-              <td>Client</td>
-              <td>2020-05-24</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Post six</td>
-              <td>Administrator</td>
-              <td>2020-05-25</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Post Seven</td>
-              <td>Administrator</td>
-              <td>2020-05-26</td>
-              <td><a href="#" class="btn btn-outline-secondary btn-sm">
-                 Details <i></i>
-              </a></td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
-    </div>
-      <div class="col-md-4 mt-4">
-          <div class="card">
-            <div class=" bg-primary text-white p-4">
-              <i class="fas fa-list-ul fa-6x"></i>
-              <h2 class="float-right font-weight-bold" style="font-size: 50px; text-align: center;">08 <span class="d-block">Posts</span></h2>
-            </div>
-            <div class="card-footer text-primary">
-              <h6 class="text-center"><a href=""> View Details
-              <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
-            </div>
-          </div>
-          <div class="card mt-5">
-            <div class=" bg-success text-white p-4 ">
-              <i class="fas fa-list-ul fa-6x"></i>
-              <h2 class="float-right font-weight-bold" style="font-size: 40px; text-align: center;">04 <span class="d-block">Categories</span></h2>
-            </div>
-            <div class="card-footer text-primary">
-              <h6 class="text-center"><a href=""> View Details
-              <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
-            </div>
-          </div>
-          <div class="card mt-5">
-            <div class=" bg-warning text-white p-4 ">
-              <i class="fas fa-list-ul fa-6x"></i>
-              <h2 class="float-right font-weight-bold" style="font-size: 50px; text-align: center;">20 <span class="d-block">Users</span></h2>
-            </div>
-            <div class="card-footer text-warning">
-              <h6 class="text-center"><a href=""> View Details
-              <i class="fas fa-arrow-alt-circle-right"></i></h6></a>
-            </div>
-          </div>
-      </div> 
-    </div>
+  
+      
+  
+
   
   <!-- dashboard content ends -->
   <!-- footer start -->

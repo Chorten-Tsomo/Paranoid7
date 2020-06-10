@@ -5,8 +5,10 @@
  */
 package com.usermanagementsystem.Controller;
 
+import com.usermanagementsystem.DOA.MyDb;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -71,18 +73,23 @@ public class LoginCheck extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
+       
+        
+        
         String email = request.getParameter("uemail");
         String password = request.getParameter("upass");
         
-        if(email.equals("jay@gmail.com")&& password.equals("1234")){
+        if(email.equals("admin"  )&& password.equals("admin")){
         
             response.sendRedirect("dashboard/index.html");
             
-            }else{
+        }else if(email.isEmpty() || password.isEmpty()){ 
                     
                     response.sendRedirect("Login.jsp");
         }
-        
+        else{
+        response.sendRedirect("dashboard/index2.html");
+        }
     }
 
     /**
